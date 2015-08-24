@@ -39,3 +39,29 @@ rm = remove
 help = help menu and tips
 
 # 1.4 Forking and Cloning
+
+1.4 Create, Fork, and Clone Repositories
+
+Create new repo:
+- Navigate to Github.com
+- Press the “+” sign at the top right corner
+- Name Repo
+- Choose sharing settings
+- Add license if desired
+- Create Repo!
+
+Fork a repo:
+- Navigate to desired Github page
+- Click “Fork” button at top right corner
+- Choose which user you would like to fork to (usually yourself)
+- Fork Repo!
+
+Clone a repo through command line:
+- Navigate to desired Github page
+- Bottom right corner copy Github link
+- Create directory that you wish to clone to in command line
+- Write “Git clone [Github Link]” into command line
+
+Forking a repository is useful in being able to retrieve a carbon copy of existing code and storing it under your own account. In this way you can work from an existing base code without having to re-write everything. You can then clone your own fork into your local directory. In the future, your new code could then be pushed back up to whatever original code base through a pull request.
+
+I had little to no trouble using and setting up Git and Github. I learned about the difference between forking and cloning, and how they are related.
