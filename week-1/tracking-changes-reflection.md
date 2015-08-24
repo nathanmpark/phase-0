@@ -25,9 +25,10 @@ Cheat Sheet (starting from master):
 - git add
 - git commit -m "[commit message]"
 - git push origin [feature-branch]
+- open pull request on github.com and merge
+- delete branch on github.com
 - git co master
-- git pull origin master
-- git merge origin/master
+- git pull
 - git branch -d [feature-branch]
 
 A pull request is when changes from a branch are being pushed into the master. Whoever has write permissions on the master will have to accept the "pull request" being pushed from the branch. This can be merged through the github UI or by using the merge command.
