@@ -1,2 +1,2 @@
-![Wireframe-Index](https://github.com/nathanmpark/nathanmpark.github.io/tree/master/imgs/wireframe-index.png "Wireframe-Index")
-![Wireframe-Blog-Index](https://github.com/nathanmpark/nathanmpark.github.io/tree/master/imgs/wireframe-blog-index.png "Wireframe-Blog-Index")
+![Wireframe-Index](imgs/wireframe-index.png "Wireframe-Index")
+![Wireframe-Blog-Index](imgs/wireframe-blog-index.png "Wireframe-Blog-Index")
