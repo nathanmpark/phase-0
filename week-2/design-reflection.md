@@ -1,4 +1,4 @@
-![Alt text](sitemap.png "DBC Sitemap")
+![DBC Sitemap Image](sitemap/sitemap.png "DBC Sitemap")
 
 >What are the 6 Phases of Web Design?
 
