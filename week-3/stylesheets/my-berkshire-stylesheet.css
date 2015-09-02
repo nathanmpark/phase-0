@@ -1,0 +1,77 @@
+
+.color-text {color: #000080;}
+a:link {color: #800080;}
+a:visited {color: #ff0000;}
+.bg {background-color: #ffffff;}
+
+.debug {border: 1px solid red;}
+
+.fl-l{ float: left; }
+.fl-r{ overflow: hidden;}
+
+/*This is to remove the preset margins of chrome*/
+ul, ol{
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+
+li {
+  padding: 1em;
+}
+
+.p-m {
+  padding: 1.5em;
+}
+
+.width-l{
+  width: 50%;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.bold {font-weight: bold;}
+.size-h1 {font-size: 1.1em;}
+.size-h2 {font-size: .9em;}
+.size-h3 {font-size: .7em;}
+.size-h4 {font-size: .6em;}
+
+.t-center {text-align: center;}
+
+.linebreak {
+  background-color: black;
+  height: 1px;
+}
+
+.size-up {font-size: 1.5em;}
+.pm-top {margin-top: 0em;}
+.pm-bot {margin-bottom: 0em;}
+.pm-top-med {margin-top: 3em;}
+
+/* Reflection
+
+What is important to know when linking an external file (like a stylesheet) to an HTML file?
+
+It is very important to get the link tag correct. Much time was spent trying to figure out why there were no style changes to realize our link tag had a type in it.
+
+What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+
+CSS is a very useful tool, but tricks involed altering the margins, padding, float, text-align, etc. It was hard to get the site exactly right, and it was later discovered in comparing source code that the actual Berkshire Hathaway site has their styling coded into the html!!!
+
+What CSS did you use to modify the element style (like size, color, etc.)
+
+My pair and I tried to follow the atomic convention as much as possible, and so only created classes with a level of abstraction so that it could be used throughout the web page. Some CSS included using the font-size, font-weight, background color, etc.
+
+Did you modify the HTML to include classes or ids? If so, which did you chose and why? If you didn't, how would you know which one to add to your HTML?
+
+We chose to stick to classes to follow the ATOMIC coding convention of CSS. There were some instances of coding along the tags and some pseudo-coding but it was limited to where it would make the html code look clean.
+
+When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?
+
+The original site had fairly clean code, and considering how bare-bone the design it might not actually be a bad thing. However, our re-design of the site using a separate css file does look a bit cleaner in that it is less lines of code and less repetitive.
+
+*/
