@@ -18,7 +18,7 @@ There are many different ways to resize elements on the DOM. You can change the 
 
 >What are the differences between Absolute, Fixed, Static, and Relative positioning? Which did you find easiest to use? Which was most difficult?
 
-Static elements are not affected by top, bottom, left, or right properties. Relative positioning is relative to its normal position.Fixed is positioned relative to its viewpoin, which means it will always stay in the same place regardless of where you move the page,  and absolute is positioned relative to its nearest ancestor or the overall document. I found absolute the easiest to use when trying to establish a footer. Relative to me seems to be the hardest but I have yet to use it.
+Static elements are not affected by top, bottom, left, or right properties. Relative positioning is relative to its normal position. Fixed is positioned relative to its viewpoint, which means it will always stay in the same place regardless of where you move the page, and absolute is positioned relative to its nearest ancestor or the overall document. I found absolute the easiest to use when trying to establish a footer. Relative to me seems to be the hardest but I have yet to use it.
 
 >What are the differences between Margin, Border, and Padding?
 
