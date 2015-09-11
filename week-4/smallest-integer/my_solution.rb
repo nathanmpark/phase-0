@@ -12,5 +12,6 @@
 
 # Your Solution Below
 def smallest_integer(list_of_nums)
-  # Your code goes here!
+  list_of_nums = list_of_nums.sort
+  return list_of_nums[0]
 end
