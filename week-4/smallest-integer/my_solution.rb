@@ -12,6 +12,18 @@
 
 # Your Solution Below
 def smallest_integer(list_of_nums)
-  list_of_nums = list_of_nums.sort
-  return list_of_nums[0]
+  index = 0
+  counter = 1
+  if list_of_nums == []
+    return nil
+  end
+  until counter == list_of_nums.length
+    if list_of_nums[index] < list_of_nums[counter]
+      counter += 1
+    else
+      index = counter
+      counter += 1
+    end
+  end
+  return list_of_nums[index]
 end
