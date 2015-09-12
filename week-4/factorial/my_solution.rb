@@ -9,16 +9,16 @@
 # end loop when counter reaches zero
 # return number
 
-# Your Solution Below
-def factorial(number)
-  if number == 0
+#Your Solution Below
+def factorial(num)
+  if num == 0
     return 1
   else
-    value = 1
-    until number == 1
-      value *= number
-      number -= 1
+    value = num - 1
+    until value == 0
+      num *= value
+      value -= 1
     end
-  return value
+    return num
   end
 end
