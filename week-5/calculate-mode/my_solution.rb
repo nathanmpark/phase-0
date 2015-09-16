@@ -8,8 +8,6 @@
 # include it in this file. Also make sure everything that isn't code
 # is commented.
 
-
-
 # 0. Pseudocode
 
 # What is the input?
@@ -43,14 +41,15 @@
 #     count[item] += 1
 #   end
 #   max_val = count.max_by{|a,b| b}[1]
-#   count.select {|a,b| b == max_val}.keys
+#   count.select{|a,b| b == max_val}.keys
 # end
 
 def mode(array)
-  count = array.each_with_object(Hash.new(0)) { |a, b| b[a] += 1}
+  count = array.each_with_object(Hash.new(0)) {|a,b| b[a] += 1}
   max_val = count.max_by{|a,b| b}[1]
   count.select {|a,b| b == max_val}.keys
 end
+
 # 4. Reflection
 
 # Which data structure did you and your pair decide to implement and why?
