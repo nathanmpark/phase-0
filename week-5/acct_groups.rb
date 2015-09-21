@@ -14,9 +14,9 @@
 
 def acct_groups(names)
   if names.length%4 > 2
-    names.each_slice(4).to_a
+    names.shuffle.each_slice(4).to_a
   elsif names.length%4 > 0
-    x = names.each_slice(3).to_a
+    x = names.shuffle.each_slice(3).to_a
     x[0..-3] + [(x[-2]+x[-1])]
   end
 end
