@@ -62,7 +62,7 @@ end
 # Once a class is established, you can utilize a given base code to build upon and make change based on need.
 
 # What new methods did you learn when working on this challenge, if any?
-# I learned about using the .at as a way to pull values based on index from an array, and as well learned that there were some limitations on being able to subtract from certain object variables.
+# I learned about using the .at as a way to pull values based on index from an array, and as well learned that there were some limitations on being able to subtract from certain instance variables.
 
 # What concepts about classes were you able to solidify in this challenge?
 # I was able to solidify how object variables could and could not be passed.
