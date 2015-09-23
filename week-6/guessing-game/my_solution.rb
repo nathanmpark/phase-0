@@ -2,7 +2,7 @@
 
 
 # I worked on this challenge [by myself].
-# I spent [#] hours on this challenge.
+# I spent [1] hours on this challenge.
 
 # Pseudocode
 # first set a range of numbers to guess from
@@ -70,9 +70,6 @@ class GuessingGame
     return true
   end
 end
-
-
-
 
 # Reflection
 
