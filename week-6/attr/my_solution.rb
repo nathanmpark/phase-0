@@ -17,7 +17,7 @@ end
 
 class Greetings
 
-  attr_accessor :name
+  attr_accessor :namedata
 
   def intialize
     @namedata = NameData.new
