@@ -2,31 +2,24 @@
 
 # I worked on this challenge [by myself]
 
-# I spent [3] hours on this challenge.
+# I spent [4] hours on this challenge.
 
 class NameData
-
-  attr_accessor :name
+  attr_reader :name
 
   def initialize
-    @name = "Nathan"
+    @name = "Nathan Park"
   end
-
 end
 
-
 class Greetings
-
-  attr_accessor :namedata
-
-  def intialize
+  def initialize
     @namedata = NameData.new
   end
 
   def hello
-    puts "Hello Student! How wonderful to see you today."
+    puts "Hello #{@namedata.name}! How wonderful to see you today."
   end
-
 end
 
 greet = Greetings.new
