@@ -87,53 +87,83 @@
 
 # Refactored Solution
 
+# class CreditCard
+#   attr_accessor :even_index_numbers, :odd_index_numbers, :answer
+#   attr_reader :card_number
+
+#   def initialize(card_number)
+#     card_number = card_number.to_s.split("")
+#     if card_number.length == 16
+#       @card_number = card_number
+#     else
+#       raise ArgumentError
+#     end
+#     @even_index_numbers = []
+#     @odd_index_numbers = []
+#     @answer = 0
+#   end
+
+#   def split_card_number
+#     index = 0
+#     until index == @card_number.length
+#       if index.even?
+#         @even_index_numbers << card_number[index]
+#       else
+#         @odd_index_numbers << card_number[index]
+#       end
+#         index += 1
+#     end
+#   end
+
+#   def double_digits
+#     @even_index_numbers.map! {|num| num.to_i * 2 }
+#   end
+
+#   def split_digits
+#     @even_index_numbers = @even_index_numbers.join("").split("")
+#   end
+
+#   def add_numbers
+#     @even_index_numbers.each {|num| @answer += num.to_i}
+#     @odd_index_numbers.each {|num| @answer += num.to_i}
+#   end
+
+#   def check_card
+#     split_card_number
+#     double_digits
+#     split_digits
+#     add_numbers
+#     @answer % 10 == 0
+#   end
+# end
+
+
+## SECOND REFACTORED SOLUTION
+
 class CreditCard
-  attr_accessor :even_index_numbers, :odd_index_numbers, :answer
-  attr_reader :card_number
+  attr_accessor :card_number
 
   def initialize(card_number)
-    card_number = card_number.to_s.split("")
-    if card_number.length == 16
-      @card_number = card_number
-    else
-      raise ArgumentError
-    end
-    @even_index_numbers = []
-    @odd_index_numbers = []
-    @answer = 0
-  end
-
-  def split_card_number
-    index = 0
-    until index == @card_number.length
-      if index.even?
-        @even_index_numbers << card_number[index]
-      else
-        @odd_index_numbers << card_number[index]
-      end
-        index += 1
-    end
-  end
-
-  def double_digits
-    @even_index_numbers.map! {|num| num.to_i * 2 }
-  end
-
-  def split_digits
-    @even_index_numbers = @even_index_numbers.join("").split("")
-  end
-
-  def add_numbers
-    @even_index_numbers.each {|num| @answer += num.to_i}
-    @odd_index_numbers.each {|num| @answer += num.to_i}
+    @card_number = card_number.to_s.split("")
+    raise ArgumentError if @card_number.length != 16
   end
 
   def check_card
-    split_card_number
-    double_digits
-    split_digits
-    add_numbers
-    @answer % 10 == 0
+    add_numbers % 10 == 0
+  end
+
+  private
+
+  def add_numbers
+    split_digits.inject { |sum, num| sum += num.to_i }
+  end
+
+  def split_digits
+    double_even_digits.join("").split("").map!(&:to_i)
+  end
+
+  def double_even_digits
+    card_number.map!(&:to_i).each_index { |i| card_number[i] *= 2 if i.even? }
   end
 end
 
