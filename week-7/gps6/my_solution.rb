@@ -1,29 +1,33 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Ryan Lesson].
+# We spent [1] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+#For the file that the require_relative is defined on, It makes available all content on the file it references.
+#Require_relative defines a path for ruby to find the file it references, relative to the file that require_relative is being defined on. Require starts at the beginning of you computers home file and needs an explicit path.
+
 require_relative 'state_data'
 
 class VirusPredictor
 
+  #Defines the parameters that will be passed into the class and then defines these parameters as instance variables.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  #Calls upon two methods with the instance variables put in as the parameters of the methods.
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
+  #Takes the hash values from STATE_DATA and inputs them into this method as parameters. Runs flow control on the parameters to determine what type of operations to run on that specified parameter. Finally, it prints out a statement. Predicts number of deaths.
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -41,21 +45,22 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  #Takes the initialized values and runs flow control on them. The methods uses a specified type of operation depending on what if statement returns true. Prints the data. Predicts speed of spread.
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
+
 
     if @population_density >= 200
-      speed += 0.5
+      speed = 0.5
     elsif @population_density >= 150
-      speed += 1
+      speed = 1
     elsif @population_density >= 100
-      speed += 1.5
+      speed = 1.5
     elsif @population_density >= 50
-      speed += 2
+      speed = 2
     else
-      speed += 2.5
+      speed = 2.5
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"
@@ -64,24 +69,26 @@ class VirusPredictor
 
 end
 
-#=======================================================================
-
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+STATE_DATA.keys.each do |state_name|
+  display = VirusPredictor.new(state_name,STATE_DATA[state_name][:population_density],STATE_DATA[state_name][:population])
+  display.virus_effects
+end
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
-
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
-
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
-
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
-
-
-#=======================================================================
 # Reflection Section
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# The difference is that one is using a string as a key and the other is using the shorthand for the symbol notation. (:symbol => value is the same as symbol: value).
+
+# What does require_relative do? How is it different from require?
+# Require relative will read in a file as long you reference it based on relative file path, while require must have an explicit full file path name.
+
+# What are some ways to iterate through a hash?
+# You can iterate through a hash using any enumerable, which works through the .each method. Some examples include .map, .sort, etc.
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# There was an excess/repetitive use of code by passing the parameters to the method virus_effects. This was not needed as the initialize method created instance variables which could be passed through instance methods within the class.
+
+# What concept did you most solidify in this challenge?
+# Solidified my understanding of the class structure and how the instance variables can be used across methods.
